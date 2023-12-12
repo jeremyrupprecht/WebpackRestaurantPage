@@ -1,0 +1,457 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+    color: rgb(206, 206, 206);
+}
+
+body, html {
+    height: 100%;
+}
+
+/*  */
+
+body {
+    background-color: rgb(10, 10, 10);
+    overflow-x: hidden;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    background-color: transparent;
+}
+
+.content {
+    position: relative;
+}
+
+.mainContainerLong {
+
+    height: 100vh;
+    width: 100vw;
+
+    display: grid;
+    grid-template: 1fr / 1fr 2fr;
+}
+
+.mainLeft {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.homeMainCaption {
+    margin: 0px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 50px;
+}
+
+.mainLeft p {
+    font-size: 1.3rem;
+}
+
+.homeMainCaption > p {
+    color: gray;
+}
+
+.mainLeft h1 {
+    font-size: 2.5rem;
+}
+
+.mainLeft button {
+    background: rgb(255,60,0);
+    background: linear-gradient(90deg, rgba(255,60,0,1) 87%, rgba(255,149,0,1) 100%);
+    padding: 17px;
+    border-radius: 10px;
+}
+
+.mainLeft button:hover {
+    background: rgb(255,60,0);
+    background: linear-gradient(90deg, rgba(255,60,0,1) 87%, rgb(255, 213, 154) 100%);
+}
+
+.mainRight {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+
+    display: grid;
+    grid-template:  70px 1fr / 1fr;
+
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.288);
+
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 40px;
+
+    grid-area: 1 / 1 / 2 / 2;
+    z-index: 1;
+}
+
+.navbar h2 {
+    color: rgb(235, 235, 235);
+}
+
+.mainRightImg {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    grid-area: 1 / 1 / 3 / 2;
+}
+
+/* Button Underline Animation */
+
+.underlineEffect {
+    display: inline-block;
+    position: relative;
+}
+ 
+ .underlineEffect:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: rgba(255, 60, 0, 0.788);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+ }
+ 
+ .underlineEffect:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .mainLeft {
+        grid-area: 1 / 1 / 2 / 3;
+    }
+
+    .mainRightImg {
+        display: none;
+    }
+
+    .mainRight {
+        grid-area: 1 / 1 / 2 / 3;
+    }
+
+    .homeMainCaption {
+        align-items: center;
+    }
+
+    .mainLeft h1 {
+        text-align: center;
+    }
+}
+
+/* Menu Page  */
+
+.makeContentFullScreenFlexbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+
+    /* height: 100vh; */
+    height: 100%;
+    width: 100vw;
+
+    gap: 30px;
+}
+
+.mainContainerShort {
+    height: auto;
+    width: 100vw;
+
+    display: grid;
+    grid-template: 1fr / 1fr 2fr;
+}
+
+.navbarLeft {
+    position: absolute;
+    top: 0;
+    height: 70px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.288);
+}
+
+.centerDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.discoverHeader {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.884);
+    padding: 3px;
+    font-size: 1.7rem;
+    color: rgb(255, 106, 56);
+}
+
+.foodMenuHeader {
+    font-size: 2.8rem;
+}
+
+.menuItemsGrid {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.menuCard {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menuTitle {
+    font-size: 2.5rem;
+    color: rgb(255, 106, 56);
+}
+
+.itemTitle {
+    display: flex;
+    gap: 10px;
+
+}
+
+.itemTitle p {
+    font-size: 1.3rem;
+}
+
+.underline {
+    flex: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.884);
+    margin-bottom: 8px;
+}
+
+.ingredients {
+    color: rgb(161, 161, 161);
+    margin-top: 8px;
+}
+
+
+@media only screen and (max-width: 750px) {
+
+    .menuItemsGrid {
+        grid-template: 1fr 1fr / 1fr;
+        margin-bottom: 50px;
+    }
+}
+
+/* Contact Page  */
+
+.contactBackground {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.8;
+
+}
+
+.form {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.letsP {
+    color: rgb(255, 106, 56);
+    font-size: 1.5rem;
+}
+
+.bookH1 {
+    color: white;
+}
+
+.inputsGrid {
+    display: grid;
+    grid-template: repeat(3, 2.7rem) 4rem / 1fr 1fr 1fr;
+    gap: 25px;
+}
+label {
+    align-self: end;
+    color: white;
+}
+
+input, .inputsGrid button {
+    border-radius: 5px;
+}
+
+input {
+    border: none;
+    background-color: transparent;
+    border: 1px solid black;
+    color: white;
+    padding-left: 10px;
+}
+
+.inputsGrid input[type="email"] {
+    grid-column: 1 / 4;
+}
+
+input[type="month"], input[type="time"] {
+    color-scheme: dark;
+}
+
+.inputsGrid button {
+    background-color: rgb(255, 81, 23);
+    grid-column: 1 / 3;
+    margin-top: 1rem;
+    color: white;
+}
+
+::placeholder {
+    color: white;
+}
+
+/* Contact Page Form Validation Styling */
+
+/* -------------------- */
+
+input:focus:valid {
+    background-color: rgba(0, 128, 0, 0.479);
+}
+
+input:focus:invalid {
+    background-color: rgba(255, 0, 0, 0.363);
+}
+
+input:not(:focus):valid {
+    background-color: rgba(0, 128, 0, 0.479);
+}
+
+@media only screen and (max-width: 600px) { 
+
+    .inputsGrid {
+        grid-template: repeat(3, 2.7rem) 4rem / 1fr;
+    }
+}
+
+/* -------------------- */
+
+.footerContainer {
+    width: 100%;
+    height: 350px;
+    background-color: rgba(0, 0, 0, 0.363);
+    margin-top: auto;
+    padding: 40px;
+}
+
+.footerContainer * {
+    color: rgb(199, 199, 199)
+}
+
+.orangeSpan, .footerItem > p:first-child {
+    color: rgb(255, 106, 56);
+}
+
+.footerAcross {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.footerItem {
+   max-width: 450px;
+}
+
+.footerItem > p:first-child {
+    font-size: 1.5rem;
+}
+
+.aboutUs > p:nth-child(2), .footerItem input, .contactUsGrid {
+    margin-top: 20px;
+}
+
+.footerItem input {
+    height: 2.7rem;
+    width: 13.5rem;
+}
+
+.footerItem form {
+    position: relative;
+}
+
+.footerItem button {
+    position: absolute;
+    height: 2rem;
+    width: 2rem;
+    background-color: rgb(255, 81, 23);
+    border-radius: 10px;
+    top: 1.563rem;
+    right: 0.275rem;
+}
+
+.rightArrowImg {
+    height: 1.8rem;
+    width: 1.8rem;
+    padding-top: 4px;
+    padding-left: 1px;
+}
+
+.footerAcross > .footerItem:nth-child(2) {
+    white-space: nowrap;
+}
+
+.flexBox {
+    display: flex;
+    gap: 10px;
+}
+
+.contactUsGrid {
+    display: grid;
+    grid-template: repeat(8, 1rem) / 2fr;
+    gap: 7px;
+}
+
+.contactUsGrid > p {
+    white-space: nowrap;
+}
+
+@media only screen and (max-width: 600px) {
+
+
+    .footerContainer {
+        height: auto;
+    }
+
+    .footerAcross {
+        flex-direction: column;
+        gap: 40px;
+        padding-bottom: 40px;
+    }
+
+    .footerItem button {
+        left: 11.275rem;
+    }
+
+}
